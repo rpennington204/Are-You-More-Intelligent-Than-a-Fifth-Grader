@@ -1,6 +1,6 @@
 ﻿Which continent is the Sahara Desert located in?
 What is the name for huge waves that are often caused by an earthquake?
-Which of these countries is not in North America?
+Which of these countries are not in North America?
 Which amendment protects freedom of speech?
 Which branch of the U.S. government creates and passes laws?
 Which explorer was the first European to discover the Americas?
@@ -104,7 +104,7 @@ Australia
 Earthquake
 Hurricane
 Tornado
-Cuba
+France
 Brazil
 Argentina
 Second Amendment

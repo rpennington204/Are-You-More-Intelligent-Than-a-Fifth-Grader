@@ -15,13 +15,14 @@ public class Question {
 	protected String answer[][];   				//stores locations for correct answers corresponding to questions
 	protected String incorrectAnswers[][][];    //stores the corresponding wrong answers, the third dimension 
 											    //stores the three wrong answers per question
-	protected boolean attempted;   				//checks if question has been attempted
+	//protected boolean attempted;   				//checks if question has been attempted
 	
 	protected String selectedQuestion;
 	protected String selectedAnswer;
 	protected String wrongAnswer1;
 	protected String wrongAnswer2;
 	protected String wrongAnswer3;
+	protected int pointValue;
 	
 	
 	/**
@@ -38,10 +39,51 @@ public class Question {
 		wrongAnswer1 = incorrectAnswers[pValue][randQuestion][0];
 		wrongAnswer2 = incorrectAnswers[pValue][randQuestion][1];
 		wrongAnswer3 = incorrectAnswers[pValue][randQuestion][2];
+		pointValue = (pValue + 1) * 100;
 	}
 	
-	public Question() {
-		attempted = false;
+	public Question(String fileName) {
+		//attempted = false;
+		question = new String[5][10];
+		answer = new String[5][10];
+		incorrectAnswers = new String[5][10][3];
+		
+		try {
+			File ssFile = new File(fileName);
+			FileInputStream fis = new FileInputStream(ssFile);
+			Scanner scnr = new Scanner(fis);
+			for (int i = 0; i < 5; i++) {																						
+				for (int j = 0; j < 10; j++) {                          
+					question[i][j] = scnr.nextLine();
+				}
+			}
+			for (int i =0; i < 5; i++) {
+				for (int j = 0; j < 10; j++) {
+					answer[i][j] = scnr.nextLine();
+				}
+			}
+			for (int i = 0; i < 5; i++) {
+				for (int j = 0; j < 10; j++) {
+					for (int k = 0; k < 3; k++) {
+						incorrectAnswers[i][j][k] = scnr.nextLine();
+					}
+				}
+			}
+			scnr.close();
+		}
+		catch (FileNotFoundException e) {
+			System.out.println("File not found.");
+		}
+	}
+	
+	
+
+	public int getPointValue() {
+		return pointValue;
+	}
+
+	public void setPointValue(int pointValue) {
+		this.pointValue = pointValue;
 	}
 
 	public String getSelectedQuestion() {
