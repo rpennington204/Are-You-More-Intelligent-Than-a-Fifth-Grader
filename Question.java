@@ -15,7 +15,7 @@ public class Question {
 	protected String answer[][];   				//stores locations for correct answers corresponding to questions
 	protected String incorrectAnswers[][][];    //stores the corresponding wrong answers, the third dimension 
 											    //stores the three wrong answers per question
-	//protected boolean attempted;   				//checks if question has been attempted
+	protected boolean attempted;   				//checks if question has been attempted
 	
 	protected String selectedQuestion;
 	protected String selectedAnswer;
@@ -124,6 +124,14 @@ public class Question {
 
 	public void setWrongAnswer3(String wrongAnswer3) {
 		this.wrongAnswer3 = wrongAnswer3;
+	}
+
+	public boolean isAttempted() {
+		return attempted;
+	}
+
+	public void setAttempted(boolean attempted) {
+		this.attempted = attempted;
 	}
 	
 	

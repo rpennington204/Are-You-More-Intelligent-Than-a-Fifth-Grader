@@ -21,7 +21,9 @@ import java.util.TimerTask;
 public class Display implements ActionListener{
 	private JFrame displayFrame;
 	private JButton startButton;
-	private JButton[] ssQuestionsButtons;
+	//first dimension is category, second is specific question
+	//order goes social studies, science, grammar, art, then math
+	private JButton[][] questionsButtons;
 	private JPanel startingMenu;
 	private JPanel questionsMenu;
 	private JPanel answerMenu;
@@ -31,9 +33,12 @@ public class Display implements ActionListener{
 	private JButton incorrectAnswerButton2;
 	private JButton incorrectAnswerButton3;
 	private JPanel resultScreen;
-	private SocialStudiesQuestion ssQuestion;
-	private int totalPoints;
-	private JLabel userScoreLabel;
+	private Question question;
+	private int player1Points;
+	private int player2Points;
+	private JLabel player1ScoreLabel;
+	private JLabel player2ScoreLabel;
+	private int playerTurn = 0;
 
 	/**
 	 * This method creates the frame for the program.
@@ -69,28 +74,65 @@ public class Display implements ActionListener{
 	 * This method creates the panel for the questions menu. 
 	 */
 	public void questionsMenu() {
-		ssQuestionsButtons = new JButton[5];
+		questionsButtons = new JButton[5][5];
 		questionsMenu = new JPanel();
 		displayFrame.add(questionsMenu);
 		questionsMenu.setVisible(true);
+		
 		questionsMenu.setLayout(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
-		int pointValue = 100;
+		gbc.insets = new Insets(0, 30, 50, 30);
+		
 		for (int i = 0; i < 5; i++) {
-			gbc.gridx = 0;
-			gbc.gridy = i + 1;
-			gbc.insets = new Insets(0, 4, 50, 4);
-			ssQuestionsButtons[i] = new JButton("" + pointValue);
-			ssQuestionsButtons[i].addActionListener(this);
-			ssQuestionsButtons[i].setFont(questionButtonFont);
-			questionsMenu.add(ssQuestionsButtons[i], gbc);
-			pointValue = pointValue + 100;
+			int pointValue = 100;
+			for (int j = 0; j < 5; j++) {
+				gbc.gridx = i;
+				gbc.gridy = j + 1;
+				questionsButtons[i][j] = new JButton("" + pointValue);
+				questionsButtons[i][j].addActionListener(this);
+				questionsButtons[i][j].setFont(questionButtonFont);
+				questionsMenu.add(questionsButtons[i][j], gbc);
+				pointValue = pointValue + 100;
+			}
 		}
-		userScoreLabel = new JLabel("User Score: " + totalPoints);
+		
+		gbc.insets = new Insets(0, 5, 40, 10);
+		gbc.gridx = 0;
+		gbc.gridy = 0;
+		JLabel ssCategoryText = new JLabel("Social Studies");
+		questionsMenu.add(ssCategoryText, gbc);
+		
+		gbc.gridx = 1;
+		gbc.gridy = 0;
+		JLabel scienceCategoryText = new JLabel("Science");
+		questionsMenu.add(scienceCategoryText, gbc);
+		
+		gbc.gridx = 2;
+		gbc.gridy = 0;
+		JLabel grammarCategoryText = new JLabel("Grammar");
+		questionsMenu.add(grammarCategoryText, gbc);
+		
+		gbc.gridx = 3;
+		gbc.gridy = 0;
+		JLabel artCategoryText = new JLabel("Art");
+		questionsMenu.add(artCategoryText, gbc);
+		
+		gbc.gridx = 4;
+		gbc.gridy = 0;
+		JLabel mathCategoryText = new JLabel("Math");
+		questionsMenu.add(mathCategoryText, gbc);
+		
+		player1ScoreLabel = new JLabel("Player One Score: " + player1Points);
 		gbc.gridx = 0;
 		gbc.gridy = 6;
 		gbc.insets = new Insets(5,5, 5, 0);
-		questionsMenu.add(userScoreLabel , gbc);
+		questionsMenu.add(player1ScoreLabel , gbc);
+		
+		player2ScoreLabel = new JLabel("Player Two Score: " + player2Points);
+		gbc.gridx = 4;
+		gbc.gridy = 6;
+		gbc.insets = new Insets(5, 0, 5, 5);
+		questionsMenu.add(player2ScoreLabel, gbc);	
 	}
 	
 	public void answerMenu(Question question) {
@@ -245,13 +287,14 @@ public class Display implements ActionListener{
 		Timer timer = new Timer();
 		TimerTask task = new TimerTask() {
 			public void run() {
-				questionsMenu.setVisible(true);
 				resultScreen.setVisible(false);
+				questionsMenu.setVisible(true);			
 			}
 		};
 		timer.schedule(task, 2000);
 		
 	}
+	
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -259,45 +302,45 @@ public class Display implements ActionListener{
 			startingMenu.setVisible(false);
 			questionsMenu();
 		}
-		if (e.getSource() == ssQuestionsButtons[0]) {
+		if (e.getSource() == questionsButtons[0][0]) {
 			questionsMenu.setVisible(false);
-			ssQuestionsButtons[0].setVisible(false);
-			ssQuestion = new SocialStudiesQuestion();
-			ssQuestion.selectQuestion(0);
-			answerMenu(ssQuestion);
+			questionsButtons[0][0].setVisible(false);
+			question = new SocialStudiesQuestion();
+			question.selectQuestion(0);
+			answerMenu(question);
 			
 		}
-		if (e.getSource() == ssQuestionsButtons[1]) {
+		if (e.getSource() == questionsButtons[0][1]) {
 			questionsMenu.setVisible(false);
-			ssQuestionsButtons[1].setVisible(false);
-			ssQuestion = new SocialStudiesQuestion();
-			ssQuestion.selectQuestion(1);
-			answerMenu(ssQuestion);
+			questionsButtons[0][1].setVisible(false);
+			question = new SocialStudiesQuestion();
+			question.selectQuestion(1);
+			answerMenu(question);
 			
 		}
 		
-		if (e.getSource() == ssQuestionsButtons[2]) {
+		if (e.getSource() == questionsButtons[0][2]) {
 			questionsMenu.setVisible(false);
-			ssQuestionsButtons[2].setVisible(false);
-			ssQuestion = new SocialStudiesQuestion();
-			ssQuestion.selectQuestion(2);
-			answerMenu(ssQuestion);
+			questionsButtons[0][2].setVisible(false);
+			question = new SocialStudiesQuestion();
+			question.selectQuestion(2);
+			answerMenu(question);
 			
 		}
-		if (e.getSource() == ssQuestionsButtons[3]) {
+		if (e.getSource() == questionsButtons[0][3]) {
 			questionsMenu.setVisible(false);
-			ssQuestionsButtons[3].setVisible(false);
-			ssQuestion = new SocialStudiesQuestion();
-			ssQuestion.selectQuestion(3);
-			answerMenu(ssQuestion);
+			questionsButtons[0][3].setVisible(false);
+			question = new SocialStudiesQuestion();
+			question.selectQuestion(3);
+			answerMenu(question);
 			
 		}
-		if (e.getSource() == ssQuestionsButtons[4]) {
+		if (e.getSource() == questionsButtons[0][4]) {
 			questionsMenu.setVisible(false);
-			ssQuestionsButtons[4].setVisible(false);
-			ssQuestion = new SocialStudiesQuestion();
-			ssQuestion.selectQuestion(4);
-			answerMenu(ssQuestion);
+			questionsButtons[0][4].setVisible(false);
+			question = new SocialStudiesQuestion();
+			question.selectQuestion(4);
+			answerMenu(question);
 			
 		}
 		
@@ -309,11 +352,27 @@ public class Display implements ActionListener{
 		if (e.getSource() == correctAnswerButton) {
 			answerMenu.setVisible(false);
 			answerResultScreen(true);
-			totalPoints = totalPoints + ssQuestion.getPointValue();
-			userScoreLabel.setText("User Score: " + totalPoints);
+			if (playerTurn%2 == 0) {
+				player1Points = player1Points + question.getPointValue();
+				player1ScoreLabel.setText("Player One Score: " + player1Points);
+			}
+			else {
+				player2Points = player2Points + question.getPointValue();
+				player2ScoreLabel.setText("Player Two Score: " + player2Points);
+			}
+			playerTurn ++;
+			
+			if (playerTurn == 25) {
+				//TODO: make ending menu
+			}
 		}
 			
 		
 	}
+
+	
+
+	
+	
 
 }

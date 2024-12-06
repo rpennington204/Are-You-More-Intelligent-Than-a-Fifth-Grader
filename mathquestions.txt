@@ -1,0 +1,250 @@
+﻿What is 12 + 7?
+Which number is even?
+What is 5 × 4?
+Which of these is a multiple of 3?
+How many sides does a rectangle have?
+What is 28 ÷ 4?
+What is 6 + 9?
+Which of these numbers is a prime number?
+What is the next number in the sequence: 3, 6, 9, __?
+What is 10 – 7?
+What is 9 × 8?
+Which of these is a factor of 24?
+What is 56 ÷ 7?
+What is 4²?
+Which number is divisible by 5?
+What is the perimeter of a square with side length 6?
+Which fraction is equivalent to 1/2?
+What is 5 + 9 × 2?
+What is the value of 100 – 75?
+What is the next number in the sequence: 7, 14, 21, __?
+What is 35 ÷ 5?
+Which of these numbers is a multiple of 12?
+What is 3³?
+Which of these fractions is greater than 1/2?
+What is 16 × 3?
+Which number is a prime number?
+What is the perimeter of a rectangle with a length of 8 and width of 3?
+What is 0.6 + 0.7?
+What is the next number in the sequence: 12, 24, 36, __?
+Which number is divisible by 3?
+What is 144 ÷ 12?
+What is the greatest common divisor of 18 and 24?
+What is the least common multiple of 4 and 5?
+What is 5.2 + 3.6?
+What is 2/3 of 18?
+What is the area of a triangle with a base of 8 and a height of 6?
+What is 15% of 200?
+What is the next number in the sequence: 5, 10, 15, __?
+Which of these is a decimal equivalent of 3/4?
+Which of these numbers is a perfect square?
+What is 5²?
+What is the greatest common factor of 24 and 36?
+Which of these is an integer?
+What is the solution to 3x = 18?
+What is the volume of a rectangular prism with length 4, width 3, and height 6?
+What is 7/8 – 1/8?
+What is the area of a circle with radius 5?
+Which of these is a solution to the equation 2x + 3 = 11?
+What is the next number in the sequence: 2, 6, 12, __?
+Which of these is a prime number?
+19
+24
+20
+18
+4
+7
+15
+7
+12
+3
+72
+2
+8
+16
+45
+24
+2/4
+23
+25
+28
+7
+24
+27
+2/3
+48
+19
+22
+1.3
+48
+33
+12
+6
+20
+8.8
+12
+24
+30
+20
+0.75
+49
+25
+12
+5
+6
+72
+3/4
+78.5
+4
+24
+29
+20
+18
+21
+11
+15
+31
+18
+25
+15
+22
+24
+27
+3
+5
+6
+6
+8
+5
+13
+14
+16
+8
+9
+6
+11
+10
+15
+5
+2
+4
+80
+64
+75
+7
+5
+10
+6
+7
+9
+12
+14
+20
+23
+32
+33
+12
+18
+10
+1/3
+3/5
+5/6
+28
+19
+20
+20
+30
+35
+25
+24
+30
+6
+5
+9
+26
+28
+30
+9
+15
+30
+3/8
+5/12
+1/4
+42
+52
+46
+18
+20
+21
+24
+28
+21
+1.2
+1.0
+1.1
+45
+42
+50
+28
+35
+38
+10
+15
+14
+4
+8
+12
+10
+30
+15
+8.2
+9.2
+7.8
+9
+10
+8
+30
+48
+36
+25
+40
+35
+20
+25
+30
+0.7
+0.8
+0.85
+48
+50
+51
+10
+15
+20
+6
+18
+8
+2.5
+3.1
+1/2
+5
+7
+8
+48
+24
+36
+5/8
+7/8
+1/2
+25.4
+50.2
+39.3
+3
+5
+6
+20
+18
+25
+27
+30
+33
