@@ -5,8 +5,6 @@ public class Main{
 	
 
 	public static void main(String[] args) {
-		SocialStudiesQuestion ssQuestion = new SocialStudiesQuestion();
-		NonPlayerCharacter character = new NonPlayerCharacter();
 		
 		
 		Display display = new Display();
