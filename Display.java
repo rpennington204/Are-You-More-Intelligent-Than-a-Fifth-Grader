@@ -15,6 +15,7 @@ import java.util.TimerTask;
 
 /**
  * This class handles functions related to display and menus.
+ * It also works with the button functionality. 
  */
 
 public class Display implements ActionListener{
@@ -665,14 +666,5 @@ public class Display implements ActionListener{
 		if (e.getSource() == exitButton) {
 			System.exit(0);
 		}
-		
-			
-		
 	}
-
-	
-
-	
-	
-
 }
