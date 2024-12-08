@@ -15,7 +15,7 @@ Which of these is a solid?
 What does a thermometer measure?
 Which of the following is NOT a planet in our solar system?
 Which of these is an example of a nonliving thing?
-What do you call the changing of water from a liquid to a gas?
+Which is the changing of water from a liquid to a gas?
 Which of the following is a gas?
 What does the moon orbit around?
 Which of these is a characteristic of living things?
@@ -183,14 +183,14 @@ Only through air
 Only through water
 Through space
 Venus
-Moon
+Saturn
 Mars
 Water
 Iron
 Oxygen
 Mantle
-Core
-Atmosphere
+Inner-Core
+Outer-Core
 The Moon moving around the Earth
 The Sun moving around the Earth
 The Earth’s tilt

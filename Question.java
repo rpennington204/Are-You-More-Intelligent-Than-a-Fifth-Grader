@@ -9,14 +9,15 @@ import java.io.File;
  * Parent class that stores and has functions related to the questions in the quiz show
  */
 public class Question {
-	protected String question[][]; 				//There will be 100 point, 200 point, up to 500 point questions
-								   				//the first dimension in the array stores location for point
-								   				//values (0=100 questions), and the second dimension stores specific questions
-	protected String answer[][];   				//stores locations for correct answers corresponding to questions
-	protected String incorrectAnswers[][][];    //stores the corresponding wrong answers, the third dimension 
-											    //stores the three wrong answers per question
-	protected boolean attempted;   				//checks if question has been attempted
-	
+	protected String question[][]; 				
+								   				
+	/*There will be 100 point, 200 point, up to 500 point questions.
+	The first dimension in the array stores location for point
+	values (0=100 questions), and the second dimension stores specific questions.*/
+	protected String answer[][];   				
+	protected String incorrectAnswers[][][];   
+											  
+
 	protected String selectedQuestion;
 	protected String selectedAnswer;
 	protected String wrongAnswer1;
@@ -29,7 +30,6 @@ public class Question {
 	 * This method will be used by child classes to randomly select a string for its question,
 	 * and also assign the appropriate answers
 	 */
-	
 	public void selectQuestion(int pValue) {
 		Random rand = new Random();
 		int randQuestion = rand.nextInt(10);
@@ -42,8 +42,11 @@ public class Question {
 		pointValue = (pValue + 1) * 100;
 	}
 	
+	/**
+	 * The constructor uses the scanner tool to read a txt file and assign the questions and
+	 * answers to the array objects
+	 */
 	public Question(String fileName) {
-		//attempted = false;
 		question = new String[5][10];
 		answer = new String[5][10];
 		incorrectAnswers = new String[5][10][3];
@@ -77,7 +80,9 @@ public class Question {
 	}
 	
 	
-
+	/**
+	 * getters and setters for Question
+	 */
 	public int getPointValue() {
 		return pointValue;
 	}
@@ -124,21 +129,5 @@ public class Question {
 
 	public void setWrongAnswer3(String wrongAnswer3) {
 		this.wrongAnswer3 = wrongAnswer3;
-	}
-
-	public boolean isAttempted() {
-		return attempted;
-	}
-
-	public void setAttempted(boolean attempted) {
-		this.attempted = attempted;
-	}
-	
-	
-										
-	
-	
-	
-	
-
+	}	
 }
